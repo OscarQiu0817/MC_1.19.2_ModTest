@@ -1,0 +1,7 @@
+{
+  "_comment": "cuba_all 代表每一面的紋理相同,如果是像原木那種就不適用",
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "oscarmod:block/black_opal_block"
+  }
+}

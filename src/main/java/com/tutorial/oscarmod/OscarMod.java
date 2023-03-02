@@ -1,5 +1,6 @@
 package com.tutorial.oscarmod;
 
+import com.tutorial.oscarmod.block.ModBlocks;
 import com.tutorial.oscarmod.item.ModCreativeModeTabs;
 import org.slf4j.Logger;
 
@@ -31,7 +32,8 @@ public class OscarMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
-        
+        ModBlocks.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -52,14 +54,15 @@ public class OscarMod {
     // 新增標籤頁
     private void addCreative(CreativeModeTabEvent.BuildContents event)
     {
-    	if(event.getTab() == CreativeModeTabs.INGREDIENTS) {
-    		event.accept(ModItems.BLACK_OPAL);
-    		event.accept(ModItems.RAW_BLACK_OPAL);
-    	}
-
         if(event.getTab() == ModCreativeModeTabs.OSCAR_TAB) {
             event.accept(ModItems.BLACK_OPAL);
             event.accept(ModItems.RAW_BLACK_OPAL);
+            // 黑蛋白石礦
+            event.accept(ModBlocks.BLACK_OPAL_BLOCK);
+            event.accept(ModBlocks.BLACK_OPAL_ORE);
+            event.accept(ModBlocks.NETHERRACK_BLACK_OPAL_ORE);
+            event.accept(ModBlocks.ENDSTONE_BLACK_OPAL_ORE);
+            event.accept(ModBlocks.DEEPSLATE_BLACK_OPAL_ORE);
         }
     }
     
