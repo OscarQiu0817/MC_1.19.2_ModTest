@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "oscarmod:black_opal_ore",
+    "oscarmod:black_opal_block",
+    "oscarmod:deepslate_black_opal_ore",
+    "oscarmod:netherrack_black_opal_ore",
+    "oscarmod:endstone_black_opal_ore"
+  ]
+}
