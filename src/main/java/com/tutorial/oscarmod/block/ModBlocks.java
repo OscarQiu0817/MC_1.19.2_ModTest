@@ -18,9 +18,9 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
-            DeferredRegister.create(ForgeRegistries.BLOCKS, OscarMod.MODID);
+            DeferredRegister.create(ForgeRegistries.BLOCKS, OscarMod.MOD_ID);
 
-    public static final RegistryObject BLACK_OPAL_BLOCK = registryBlock("black_opal_block",
+    public static final RegistryObject<Block> BLACK_OPAL_BLOCK = registryBlock("black_opal_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(6f)
                     .requiresCorrectToolForDrops()));
@@ -33,19 +33,19 @@ public class ModBlocks {
 //                    .requiresCorrectToolForDrops()));
 //                }
 //            });
-    public static final RegistryObject BLACK_OPAL_ORE = registryBlock("black_opal_ore",
+    public static final RegistryObject<Block> BLACK_OPAL_ORE = registryBlock("black_opal_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(3f)
                     .requiresCorrectToolForDrops(), UniformInt.of(10,20)));
-    public static final RegistryObject DEEPSLATE_BLACK_OPAL_ORE = registryBlock("deepslate_black_opal_ore",
+    public static final RegistryObject<Block> DEEPSLATE_BLACK_OPAL_ORE = registryBlock("deepslate_black_opal_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(4f)
                     .requiresCorrectToolForDrops(), UniformInt.of(10,20)));
-    public static final RegistryObject NETHERRACK_BLACK_OPAL_ORE = registryBlock("netherrack_black_opal_ore",
+    public static final RegistryObject<Block> NETHERRACK_BLACK_OPAL_ORE = registryBlock("netherrack_black_opal_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(5f)
                     .requiresCorrectToolForDrops(), UniformInt.of(10,20)));
-    public static final RegistryObject ENDSTONE_BLACK_OPAL_ORE = registryBlock("endstone_black_opal_ore",
+    public static final RegistryObject<Block> ENDSTONE_BLACK_OPAL_ORE = registryBlock("endstone_black_opal_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f)
                     .requiresCorrectToolForDrops(), UniformInt.of(10,20)));

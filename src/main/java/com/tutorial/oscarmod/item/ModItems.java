@@ -12,7 +12,7 @@ public class ModItems {
 
 	// 註冊到 Mod 事件總表
 	public static final DeferredRegister<Item> ITEMS = 
-			DeferredRegister.create(ForgeRegistries.ITEMS, OscarMod.MODID);
+			DeferredRegister.create(ForgeRegistries.ITEMS, OscarMod.MOD_ID);
 
 	// 建立一個 BLACK_OPAL 物品，指定 id 並註冊.
 	public static final RegistryObject<Item> BLACK_OPAL = ITEMS.register("black_opal", 
