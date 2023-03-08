@@ -19,12 +19,18 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         simpleItem(ModItems.BLACK_OPAL);
         simpleItem(ModItems.RAW_BLACK_OPAL);
+        simpleEgg(ModItems.GODZILLA_EGG);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(OscarMod.MOD_ID,"item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder simpleEgg(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/template_spawn_egg"));
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {

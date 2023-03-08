@@ -1,7 +1,11 @@
 package com.tutorial.oscarmod;
 
 import com.tutorial.oscarmod.block.ModBlocks;
+import com.tutorial.oscarmod.entity.ModEntityTypes;
+import com.tutorial.oscarmod.entity.mob.godzilla.GodzillaRenderer;
+import com.tutorial.oscarmod.entity.mob.godzilla.renderer.GodzillaFireBallRenderer;
 import com.tutorial.oscarmod.item.ModCreativeModeTabs;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -16,6 +20,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import software.bernie.geckolib.GeckoLib;
 
 @Mod(OscarMod.MOD_ID)
 public class OscarMod {
@@ -32,6 +37,8 @@ public class OscarMod {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModEntityTypes.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -40,6 +47,9 @@ public class OscarMod {
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
+
+        // geckoLib 初始化
+        GeckoLib.initialize();
 
         LOGGER.info("中文測試");
     }
@@ -61,6 +71,8 @@ public class OscarMod {
             event.accept(ModBlocks.NETHERRACK_BLACK_OPAL_ORE);
             event.accept(ModBlocks.ENDSTONE_BLACK_OPAL_ORE);
             event.accept(ModBlocks.DEEPSLATE_BLACK_OPAL_ORE);
+
+            event.accept(ModItems.GODZILLA_EGG);
         }
     }
     
@@ -71,7 +83,8 @@ public class OscarMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-        	
+            EntityRenderers.register(ModEntityTypes.GODZILLA.get(), GodzillaRenderer::new);
+            EntityRenderers.register(ModEntityTypes.GODZILLA_FIREBALL.get(), GodzillaFireBallRenderer::new);
         }
     }
 

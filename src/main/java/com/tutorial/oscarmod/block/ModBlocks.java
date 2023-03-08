@@ -52,7 +52,10 @@ public class ModBlocks {
 
 
     private static <T extends Block> RegistryObject<T> registryBlock(String name, Supplier<T> block){
+        // 註冊方塊
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
+
+        // 註冊此方塊對應的物品
         registerBlockItem(name, toReturn);
         return toReturn;
     }

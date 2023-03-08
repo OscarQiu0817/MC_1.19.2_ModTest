@@ -2,7 +2,9 @@ package com.tutorial.oscarmod.item;
 
 import com.tutorial.oscarmod.OscarMod;
 
+import com.tutorial.oscarmod.entity.ModEntityTypes;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -19,7 +21,10 @@ public class ModItems {
 			()-> new Item(new Item.Properties()));
 	public static final RegistryObject<Item> RAW_BLACK_OPAL = ITEMS.register("raw_black_opal",
 			()-> new Item(new Item.Properties()));
-	
+
+	public static final RegistryObject<Item> GODZILLA_EGG = ITEMS.register("godzilla_egg",
+	() -> new ForgeSpawnEggItem(ModEntityTypes.GODZILLA,0x22b341, 0x19732e, new Item.Properties()));
+
 	public static void register(IEventBus eventBus) {
 		ITEMS.register(eventBus);
 	}

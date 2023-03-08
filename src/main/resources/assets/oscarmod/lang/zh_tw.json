@@ -5,5 +5,8 @@
   "block.oscarmod.black_opal_block": "黑蛋白石磚",
   "block.oscarmod.black_opal_ore": "黑蛋白石礦",
 
-  "creativemodetab.oscar_tab": "客製標籤頁1"
+  "creativemodetab.oscar_tab": "客製標籤頁1",
+
+  "entity.oscarmod.godzilla": "哥吉拉",
+  "item.oscarmod.godzilla_egg": "哥吉拉的蛋"
 }
